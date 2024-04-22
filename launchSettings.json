@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "royallibraryfrontend",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
+      "serviceActions": {
+        "royallibraryapi": "StartDebugging",
+        "pgadmin_case": "StartWithoutDebugging",
+        "royallibrary.database": "StartWithoutDebugging",
+        "royallibraryfrontend": "StartDebugging"
+      }
+    }
+  }
+}

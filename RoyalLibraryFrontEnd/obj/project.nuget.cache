@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r6VGwl2ARbjXbr7nbB3qtbjRk7wDc2s0wD/OIwerfhGqQTgm5G9QQc4QcGl9gCw1JcwHiQ5htOS04oY1hnjpjA==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\RoyalLibrary\\RoyalLibraryFrontEnd\\RoyalLibraryFrontEnd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hisqu\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
+  ],
+  "logs": []
+}

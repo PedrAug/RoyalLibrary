@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  royallibraryapi:
+    image: ${DOCKER_REGISTRY-}royallibraryapi
+    build:
+      context: .
+      dockerfile: RoyalLibraryAPI/Dockerfile
+  royallibraryfrontend:
+    image: ${DOCKER_REGISTRY-}royallibraryfrontend
+    build:
+      context: .
+      dockerfile: RoyalLibraryFrontEnd/Dockerfile
+    ports:
+     - 55006:8080
+  royallibrary.database:
+    image: postgres:latest
+    container_name: royallibrary.database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres/restore/royallibrary.sql:/docker-entrypoint-initdb.d/royallibrary.sql
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=royallibrary
+  pgadmin_case:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_royallibrary
+    restart: always
+    depends_on:
+      - royallibrary.database
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 8880:80
+    volumes:
+      - ./data/pgadmin:/var/lib/pgadmin
