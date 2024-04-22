@@ -3,9 +3,9 @@
     public class Book
     {
         public string Title { get; set; }
-        public string FirstName { get; set; }
+        public string First_Name { get; set; }
 
-        public string LastName { get; set; }
+        public string Last_Name { get; set; }
 
         public int TotalCopies { get; set; }
 

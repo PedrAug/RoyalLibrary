@@ -3,7 +3,7 @@ version: '3.4'
 services:
   royallibraryapi:
     image: royallibraryapi:dev
-    container_name: "RoyalLibraryAPI"
+    container_name: "RoyalLibraryAPI_1"
     build:
       args:
         BUILD_CONFIGURATION: Debug

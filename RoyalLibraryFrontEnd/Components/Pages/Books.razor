@@ -1,7 +1,9 @@
 ﻿@page "/books"
+@rendermode InteractiveServer
 @inject HttpClient HttpClient
 @using System.Text.Json
 @using RoyalLibraryFrontEnd.Models
+@using System.Net.Http;
 
 <div class="row">
     <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
@@ -22,8 +24,10 @@
             </select>
         </div>
         <div class="mb-3 d-grid gap-2">
-            <button type="submit" @onclick="LoadBooks" class="btn btn-primary">Search</button>
+            <button @onclick="LoadBooks" class="btn btn-primary">Search</button>
         </div>
+        <p role="status">Current count: @currentCount</p>
+        <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
     </div>
 </div>
 @code {
@@ -31,13 +35,19 @@
     private string[] dropdownItems = { "Any", "Author", "ISBN" };
     private List<Book> books = new List<Book>();
     private readonly HttpClient _client;
+    private int currentCount;
 
     public async void LoadBooks()
     {
-        var apiUrl = "royallibraryapi/load-books";
+        var apiUrl = "https://localhost:51351/royal-libary/any/Jane";
         var response = await _client.GetAsync(apiUrl);
         var content = await response.Content.ReadAsStringAsync();
 
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
     }
 
 }

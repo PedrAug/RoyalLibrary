@@ -16,23 +16,25 @@ namespace RoyalLibraryAPI.Repository
         public async Task<IEnumerable<Book>> GetBooks(BookFilter bookFilter) 
         {
             var query = @"SELECT * FROM books";
-            //where username = :username AND password = :password";
             var param = new DynamicParameters();
-            if (bookFilter.ISBN != null) 
+            if (bookFilter.ISBN != null)
             {
-                query = query + @" WHERE ISBN like %";
-                param.Add(name: "ISBN", value: bookFilter.QueryString, direction: ParameterDirection.Input);
+                query = query + @" WHERE ISBN ILIKE :ISBN";
+                param.Add(name: "ISBN", value: bookFilter.QueryString + "%", direction: ParameterDirection.Input);
             }
-            if (bookFilter.Author != null)
+            else if (bookFilter.Author != null)
             {
-                param.Add(name: "Author", value: bookFilter.QueryString, direction: ParameterDirection.Input);
+                query = query + @" WHERE CONCAT(First_Name,' ', Last_Name) ILIKE :Author";
+                param.Add(name: "Author", value: "%" + bookFilter.QueryString + "%", direction: ParameterDirection.Input);
             }
-            if (bookFilter.Title != null)
+            else if (bookFilter.Title != null)
             {
-                param.Add(name: "Title", value: bookFilter.QueryString, direction: ParameterDirection.Input);
+                query = query + @" WHERE Title ILIKE :Title";
+                param.Add(name: "Title", value: "%" + bookFilter.QueryString + "%", direction: ParameterDirection.Input);
+            }else {
+                query = query + @" WHERE CONCAT(First_Name,' ', Last_Name) ILIKE :Any OR Title ILIKE :Any OR ISBN ILIKE :Any OR Type ILIKE :Any ";
+                param.Add(name: "Any", value: "%" + bookFilter.QueryString + "%", direction: ParameterDirection.Input);
             }
-            //
-            //param.Add(name: "password", value: user.Password, direction: ParameterDirection.Input);
             var bookBase = await _context.Connection.QueryAsync<Book>(query, param);
             return bookBase;
 

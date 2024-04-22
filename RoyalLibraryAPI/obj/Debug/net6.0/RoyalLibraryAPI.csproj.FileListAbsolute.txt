@@ -38,3 +38,4 @@ C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\refint\RoyalLibraryAPI
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.pdb
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.genruntimeconfig.cache
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\ref\RoyalLibraryAPI.dll
+C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.sourcelink.json

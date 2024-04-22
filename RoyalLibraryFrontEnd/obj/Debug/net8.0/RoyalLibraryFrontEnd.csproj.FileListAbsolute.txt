@@ -27,3 +27,4 @@ C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\refint\RoyalLibra
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.pdb
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.genruntimeconfig.cache
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\ref\RoyalLibraryFrontEnd.dll
+C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.sourcelink.json
