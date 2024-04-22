@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   royallibraryapi:
-    container_name: "RoyalLibraryAPI_1"
+    container_name: "RoyalLibraryAPI"
     build:
       args:
         BUILD_CONFIGURATION: Release

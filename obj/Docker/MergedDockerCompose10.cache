@@ -1,0 +1,99 @@
+name: dockercompose1913385397257424340
+services:
+  pgadmin_case:
+    container_name: pgadmin_royallibrary
+    depends_on:
+      royallibrary.database:
+        condition: service_started
+        required: true
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    image: dpage/pgadmin4:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8880"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: C:\Projects\RoyalLibrary\data\pgadmin
+        target: /var/lib/pgadmin
+        bind:
+          create_host_path: true
+  royallibrary.database:
+    container_name: royallibrary.database
+    environment:
+      POSTGRES_DB: royallibrary
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+    image: postgres:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Projects\RoyalLibrary\postgres\restore\royallibrary.sql
+        target: /docker-entrypoint-initdb.d/royallibrary.sql
+        bind:
+          create_host_path: true
+  royallibraryapi:
+    build:
+      context: C:\Projects\RoyalLibrary
+      dockerfile: RoyalLibraryAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: royallibraryapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "51351"
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hisqu\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hisqu\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  royallibraryfrontend:
+    build:
+      context: C:\Projects\RoyalLibrary
+      dockerfile: RoyalLibraryFrontEnd/Dockerfile
+    depends_on:
+      royallibraryapi:
+        condition: service_started
+        required: true
+    image: royallibraryfrontend
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "55006"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose1913385397257424340_default

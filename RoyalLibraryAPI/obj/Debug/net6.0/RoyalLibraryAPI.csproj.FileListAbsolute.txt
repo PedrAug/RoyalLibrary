@@ -24,6 +24,7 @@ C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.Assemb
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.csproj.CoreCompileInputs.cache
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.sourcelink.json
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\staticwebassets.build.json
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\staticwebassets.development.json
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\staticwebassets\msbuild.RoyalLibraryAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -38,4 +39,3 @@ C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\refint\RoyalLibraryAPI
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.pdb
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.genruntimeconfig.cache
 C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\ref\RoyalLibraryAPI.dll
-C:\Projects\RoyalLibrary\RoyalLibraryAPI\obj\Debug\net6.0\RoyalLibraryAPI.sourcelink.json

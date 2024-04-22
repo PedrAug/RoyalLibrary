@@ -15,7 +15,7 @@ namespace RoyalLibraryAPI.Controllers
             _bookService = bookService;
         }
 
-        [HttpGet("royal-libary/{filter}/{searchString}")]
+        [HttpGet("royal-library/{filter}/{searchString}")]
         public async Task<ICommandResult> GetFilteredBooks(string filter, string searchString)
         {
             var result = await _bookService.GetBooks(filter, searchString);

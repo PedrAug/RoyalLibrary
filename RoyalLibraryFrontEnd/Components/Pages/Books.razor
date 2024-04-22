@@ -1,9 +1,11 @@
 ﻿@page "/books"
 @rendermode InteractiveServer
 @inject HttpClient HttpClient
+@inject ApiService ApiService
 @using System.Text.Json
 @using RoyalLibraryFrontEnd.Models
 @using System.Net.Http;
+@using RoyalLibraryFrontEnd.Shared
 
 <div class="row">
     <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
@@ -12,7 +14,7 @@
         </div>
         <div class="mb-3">
             <label>Search Value</label>
-            <input class="form-control" />
+            <input @bind="searchString" class="form-control" />
         </div>
         <div class="mb-3">
             <label>Search by</label>
@@ -26,28 +28,74 @@
         <div class="mb-3 d-grid gap-2">
             <button @onclick="LoadBooks" class="btn btn-primary">Search</button>
         </div>
-        <p role="status">Current count: @currentCount</p>
-        <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
     </div>
 </div>
+@if (books == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>Author</th>
+                <th>total copies</th>
+                <th>copies in use</th>
+                <th>type</th>
+                <th>isbn</th>
+                <th>category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.FirstName <span></span> @book.LastName</td>
+                    <td>@book.TotalCopies</td>
+                    <td>@book.CopiesInUse</td>
+                    <td>@book.Type</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 @code {
+    private string searchString = "";
     private string searchType = "Any";
     private string[] dropdownItems = { "Any", "Author", "ISBN" };
     private List<Book> books = new List<Book>();
     private readonly HttpClient _client;
-    private int currentCount;
 
     public async void LoadBooks()
     {
-        var apiUrl = "https://localhost:51351/royal-libary/any/Jane";
-        var response = await _client.GetAsync(apiUrl);
-        var content = await response.Content.ReadAsStringAsync();
+        string Uri = "http://royallibraryapi/royal-library/" + searchType + "/" + searchString;
+        var response = await HttpClient.GetAsync(Uri);
+        if (response.IsSuccessStatusCode)
+        {
+            var responseBody = await response.Content.ReadAsStringAsync();
+            CommandResult commandRes = JsonSerializer.Deserialize<CommandResult>(responseBody);
+            if (commandRes?.Data != null)
+            {
 
+                books = JsonSerializer.Deserialize <List<Book>>(commandRes.Data.ToString());
+            }
+            else
+            {
+                Console.WriteLine("No book data found in the response.");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+        }
     }
+}
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
 
 }

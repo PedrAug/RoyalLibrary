@@ -11,12 +11,12 @@ C:\Projects\RoyalLibrary\bin\Debug\RoyalLibraryAPI.dll
 C:\Projects\RoyalLibrary\bin\Debug\RoyalLibraryFrontEnd.dll
 C:\Projects\RoyalLibrary\bin\Debug\Dapper.dll
 C:\Projects\RoyalLibrary\bin\Debug\Npgsql.dll
-C:\Projects\RoyalLibrary\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Projects\RoyalLibrary\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Projects\RoyalLibrary\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Projects\RoyalLibrary\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 C:\Projects\RoyalLibrary\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projects\RoyalLibrary\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\RoyalLibrary\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Projects\RoyalLibrary\bin\Debug\System.Text.Json.dll
 C:\Projects\RoyalLibrary\bin\Debug\Microsoft.OpenApi.dll
 C:\Projects\RoyalLibrary\bin\Debug\System.Text.Encodings.Web.dll

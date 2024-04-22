@@ -13,6 +13,8 @@ services:
       dockerfile: RoyalLibraryFrontEnd/Dockerfile
     ports:
      - 55006:8080
+    depends_on: 
+      - royallibraryapi
   royallibrary.database:
     image: postgres:latest
     container_name: royallibrary.database

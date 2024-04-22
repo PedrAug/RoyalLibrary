@@ -11,6 +11,7 @@ C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFront
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.AssemblyInfo.cs
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.csproj.CoreCompileInputs.cache
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.sourcelink.json
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\staticwebassets.build.json
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\staticwebassets.development.json
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.RoyalLibraryFrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
@@ -27,4 +28,3 @@ C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\refint\RoyalLibra
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.pdb
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.genruntimeconfig.cache
 C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\ref\RoyalLibraryFrontEnd.dll
-C:\Projects\RoyalLibrary\RoyalLibraryFrontEnd\obj\Debug\net8.0\RoyalLibraryFrontEnd.sourcelink.json

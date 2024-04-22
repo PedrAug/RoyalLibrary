@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using RoyalLibraryFrontEnd.Components;
+using RoyalLibraryFrontEnd.Shared;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configurat
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient();
+builder.Services.AddScoped<ApiService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
