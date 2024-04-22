@@ -7,9 +7,9 @@
 
         public string Last_Name { get; set; }
 
-        public int TotalCopies { get; set; }
+        public int Total_Copies { get; set; }
 
-        public int CopiesInUse { get; set; }
+        public int Copies_In_Use { get; set; }
 
         public string Type { get; set; }
 

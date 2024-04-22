@@ -57,6 +57,10 @@ services:
     ports:
       - mode: ingress
         target: 80
+        published: "443"
+        protocol: tcp
+      - mode: ingress
+        target: 80
         protocol: tcp
       - mode: ingress
         target: 443
@@ -78,13 +82,17 @@ services:
     build:
       context: C:\Projects\RoyalLibrary
       dockerfile: RoyalLibraryFrontEnd/Dockerfile
+    depends_on:
+      royallibraryapi:
+        condition: service_started
+        required: true
     image: royallibraryfrontend
     networks:
       default: null
     ports:
       - mode: ingress
         target: 8080
-        published: "55006"
+        published: "8080"
         protocol: tcp
 networks:
   default:

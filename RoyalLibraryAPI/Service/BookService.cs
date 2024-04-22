@@ -40,6 +40,7 @@ namespace RoyalLibraryAPI.Service
 
             var bookList = await _bookRepository.GetBooks(searchModel);
 
+            Success = (bookList.Any()) ? true : false;
 
             return new CommandResult(Success, "", new { bookList });
         }

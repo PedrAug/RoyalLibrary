@@ -2,19 +2,19 @@
 {
     public class Book
     {
-        public string Title { get; set; }
-        public string FirstName { get; set; }
+        public string title { get; set; }
+        public string first_Name { get; set; }
 
-        public string LastName { get; set; }
+        public string last_Name { get; set; }
 
-        public int TotalCopies { get; set; }
+        public int total_Copies { get; set; }
 
-        public int CopiesInUse { get; set; }
+        public int copies_In_Use { get; set; }
 
-        public string Type { get; set; }
+        public string type { get; set; }
 
-        public string ISBN { get; set; }
+        public string isbn { get; set; }
 
-        public string Category { get; set; }
+        public string category { get; set; }
     }
 }

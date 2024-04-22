@@ -2,8 +2,13 @@
 {
     public class CommandResult
     {
-        public bool Success { get; set; }
-        public string Message { get; set; }
-        public object Data { get; set; }
+        public bool success { get; set; }
+        public string message { get; set; }
+        public DataWrapper data { get; set; }
+    }
+
+    public class DataWrapper
+    {
+        public List<Book> bookList { get; set; }
     }
 }

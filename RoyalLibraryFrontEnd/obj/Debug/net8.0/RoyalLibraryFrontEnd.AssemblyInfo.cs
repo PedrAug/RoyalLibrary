@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoyalLibraryFrontEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb142c9162789025dc77f72881411f4f37c2434c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f57e03ee53b9ac2aa4a21ac4bbc9185f8a063363")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoyalLibraryFrontEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoyalLibraryFrontEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

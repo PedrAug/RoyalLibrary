@@ -6,13 +6,15 @@ services:
     build:
       context: .
       dockerfile: RoyalLibraryAPI/Dockerfile
+    ports:
+      - 443:80  # Expose port 443 for HTTPS
   royallibraryfrontend:
     image: ${DOCKER_REGISTRY-}royallibraryfrontend
     build:
       context: .
       dockerfile: RoyalLibraryFrontEnd/Dockerfile
     ports:
-     - 55006:8080
+      - 8080:8080  # Map port 8080 on host to port 8080 in container
     depends_on: 
       - royallibraryapi
   royallibrary.database:

@@ -1,5 +1,6 @@
 ﻿@page "/books"
 @rendermode InteractiveServer
+@attribute [StreamRendering]
 @inject HttpClient HttpClient
 @inject ApiService ApiService
 @using System.Text.Json
@@ -26,7 +27,7 @@
             </select>
         </div>
         <div class="mb-3 d-grid gap-2">
-            <button @onclick="LoadBooks" class="btn btn-primary">Search</button>
+            <button @onclick="LoadBooks" type="submit" class="btn btn-primary">Search</button>
         </div>
     </div>
 </div>
@@ -52,13 +53,13 @@ else
             @foreach (var book in books)
             {
                 <tr>
-                    <td>@book.Title</td>
-                    <td>@book.FirstName <span></span> @book.LastName</td>
-                    <td>@book.TotalCopies</td>
-                    <td>@book.CopiesInUse</td>
-                    <td>@book.Type</td>
-                    <td>@book.ISBN</td>
-                    <td>@book.Category</td>
+                    <td>@book.title</td>
+                    <td>@book.first_Name <span></span> @book.last_Name</td>
+                    <td>@book.total_Copies</td>
+                    <td>@book.copies_In_Use</td>
+                    <td>@book.type</td>
+                    <td>@book.isbn</td>
+                    <td>@book.category</td>
                 </tr>
             }
         </tbody>
@@ -74,16 +75,17 @@ else
 
     public async void LoadBooks()
     {
-        string Uri = "http://royallibraryapi/royal-library/" + searchType + "/" + searchString;
+        string Uri = "http://host.docker.internal:443/royal-library/" + searchType + "/" + searchString;
         var response = await HttpClient.GetAsync(Uri);
         if (response.IsSuccessStatusCode)
         {
             var responseBody = await response.Content.ReadAsStringAsync();
             CommandResult commandRes = JsonSerializer.Deserialize<CommandResult>(responseBody);
-            if (commandRes?.Data != null)
+            if (commandRes != null && commandRes.data != null && commandRes.data.bookList != null)
             {
 
-                books = JsonSerializer.Deserialize <List<Book>>(commandRes.Data.ToString());
+                books = commandRes.data.bookList;
+                StateHasChanged();
             }
             else
             {
@@ -97,5 +99,3 @@ else
     }
 }
 
-
-}
